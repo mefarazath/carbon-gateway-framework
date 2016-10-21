@@ -39,7 +39,11 @@ public abstract class AbstractMediator implements Mediator {
     /* Pointer for the next sibling in the pipeline*/
     Mediator nextMediator = null;
 
+    /* Key of the variable to which we assign the returned value from the mediator */
     protected String returnedOutput;
+
+    /* Key of the input message passed into the mediator */
+    protected String messageRef;
 
     /**
      * Check whether a sibling is present after this in the pipeline
@@ -155,4 +159,15 @@ public abstract class AbstractMediator implements Mediator {
         return this.returnedOutput;
     }
 
+    public void setReturnedOutput(String returnedOutput) {
+        this.returnedOutput = returnedOutput;
+    }
+
+    public String getMessageRef() {
+        return messageRef;
+    }
+
+    public void setMessageRef(String messageRef) {
+        this.messageRef = messageRef;
+    }
 }
